@@ -1,6 +1,5 @@
-# Complete project details at https://RandomNerdTutorials.com
-
 import time
+from machine import Pin, PWM
 from umqttsimple import MQTTClient
 import ubinascii
 import machine
@@ -17,13 +16,10 @@ mqtt_server = '192.168.101.46'
 #EXAMPLE IP ADDRESS
 #mqtt_server = '192.168.1.144'
 client_id = ubinascii.hexlify(machine.unique_id())
-topic_sub = b'notification'
-topic_pub = b'hello'
-
-last_message = 0
-message_interval = 5
-counter = 0
-
+topic_sub = b'hello'
+topic_pub = b'notification'
+servo = PWM(Pin(4), freq=50, duty=77)
+servo.duty(30)
 station = network.WLAN(network.STA_IF)
 
 station.active(True)

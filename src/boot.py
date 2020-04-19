@@ -16,8 +16,8 @@ mqtt_server = '192.168.101.46'
 #EXAMPLE IP ADDRESS
 #mqtt_server = '192.168.1.144'
 client_id = ubinascii.hexlify(machine.unique_id())
-topic_sub = b'hello'
-topic_pub = b'notification'
+topic_sub = b'helloop'
+topic_pub = b'hello'
 servo = PWM(Pin(4), freq=50, duty=77)
 servo.duty(30)
 station = network.WLAN(network.STA_IF)

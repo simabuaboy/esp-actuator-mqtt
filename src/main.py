@@ -2,11 +2,9 @@
 def sub_cb(topic, msg):
   a = msg.decode('utf-8')
   if a == '1':
-        client.publish(topic_pub, b'received')
         servo.duty(110)
         time.sleep(1)
         servo.duty(30)
-  print((topic, msg))
   
 
 def connect_and_subscribe():
@@ -34,7 +32,7 @@ while True:
     if new_message != 'None':
       button = Pin(34, Pin.IN)
       if button.value() ==1:
-        client.publish(topic_pub, b'pressed')  
+        client.publish(topic_pub, b'1')  
     time.sleep(1)
   except OSError as e:
     restart_and_reconnect()

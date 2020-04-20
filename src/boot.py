@@ -12,7 +12,7 @@ gc.collect()
 
 ssid = 'Donkey-Camp 2.4 GHz'
 password = 'notinthesamehole'
-mqtt_server = '192.168.101.46'
+mqtt_server = '192.168.100.33'
 #EXAMPLE IP ADDRESS
 #mqtt_server = '192.168.1.144'
 client_id = ubinascii.hexlify(machine.unique_id())
